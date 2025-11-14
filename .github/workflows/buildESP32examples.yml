@@ -24,8 +24,8 @@ jobs:
           - target: xtensa-esp32-espidf
             idf-version: v5.4.3
             ble-example: true
-            ble5-example: true
-            no_std: true
+            ble5-example: false
+            no_std: false
 
     steps:
       - name: Setup | Checkout
@@ -65,4 +65,4 @@ jobs:
     #        ${{ steps.compile.outputs.BUILT_ARCHIVE }}
     #        ${{ steps.compile.outputs.BUILT_CHECKSUM }}
           name: build-${{ matrix.target }}
-          path: target/${{ matrix.target }}*/release/
+          path: target/

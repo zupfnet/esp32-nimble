@@ -18,9 +18,9 @@ jobs:
       fail-fast: true
       matrix:
         include:
-          - target: xtensa-esp32-espidf
-            idf-version: v5.4.1
-            ble-example: true
+          #- target: xtensa-esp32-espidf
+          #  idf-version: v5.4.1
+          #  ble-example: true
           - target: xtensa-esp32-espidf
             idf-version: v5.4.3
             ble-example: true
@@ -64,5 +64,5 @@ jobs:
     #      path: |
     #        ${{ steps.compile.outputs.BUILT_ARCHIVE }}
     #        ${{ steps.compile.outputs.BUILT_CHECKSUM }}
-          name: build-${{ matrix.target }}
-          path: target/
+          name: build-${{ matrix.target }}-xyz
+          path: target/${{ matrix.target }}/
